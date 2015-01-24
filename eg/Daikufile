@@ -1,0 +1,16 @@
+use Config;
+my $mouse = "extlib/lib/perl5/$Config{archname}/auto/Mouse/Mouse.$Config{dlext}";
+
+task default => [qw(fatpack1 fatpack2)];
+
+file $mouse => sub {
+    sh qw(cpanm -lextlib --reinstall -nq Mouse);
+};
+
+file "fatpack1" => $mouse => sub {
+    sh qw(fatpack-simple -o fatpack1 script.pl);
+};
+
+file "fatpack2" => $mouse => sub {
+    sh "fatpack-xs.pl Mouse > fatpack2";
+};

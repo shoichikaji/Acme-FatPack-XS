@@ -1,0 +1,6 @@
+name = "Acme-FatPack-XS"
+# badges = ["travis"]
+authority="cpan:SKAJI"
+
+module_maker="ModuleBuildTiny"
+
