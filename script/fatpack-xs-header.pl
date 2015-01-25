@@ -20,6 +20,8 @@ for my $path (sort keys %fatpack) {
     open my $fh, ">:raw", $abs_path
         or die "Cannot open $abs_path: $!\n";
     print {$fh} MIME::Base64::decode_base64($fatpack{$path});
+    close $fh;
+    chmod 0755, $abs_path;
 }
 unshift @INC, "$dir/$identity";
 } # END of fatpack xs

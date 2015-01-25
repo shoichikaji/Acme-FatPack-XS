@@ -17,9 +17,9 @@ Sencod, prepend header to `fatpack1`:
     $ fatpack-xs-heaer.pl >> script.fatpack.pl
     $ cat fatpack1 >> script.fatpack.pl
 
-Then manualy append `fatpack-xs.pl Mouse` output to `script.fatpack.pl`:
+Then manualy append `fatpack-xs.pl` output to `script.fatpack.pl`:
 
-    $ fatpack-xs.pl Mouse > fatpack2
+    $ fatpack-xs.pl extlib/lib/perl5/darwin-2level/auto/Mouse/Mouse.bundle > fatpack2
     $ vim script.fatpack.pl fatpack2
 
 Now you'll get Mouse fatpacked `script.fatpack.pl`. See `eg` directory.
